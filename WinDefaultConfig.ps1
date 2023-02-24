@@ -1,5 +1,3 @@
-Import .\createRemoveLnk.ps1
-
 # Enable Local Admin and set Password
 Write-Host Passwort für lokaler Administrator eingeben:
 $Password = Read-Host -AsSecureString
@@ -9,6 +7,7 @@ if(-not ([string]::IsNullOrEmpty($Password))){
     $UserAccount = Get-LocalUser -Name "Administrator"
     $UserAccount | Set-LocalUser -Password $Password
 }
+
 # Change Hostname
 Write-Host Hostname eingeben:
 $Hostname = Read-Host
@@ -16,8 +15,10 @@ if(-not ([string]::IsNullOrEmpty($Hostname))){
     # Rename-Computer -NewName $Hostname
 }
 
+# Install winget
+Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
 
-# Install geat tools
+# Install tools
 winget install --force --id "Adobe.Acrobat.Reader.64-bit"
 winget install --force --id "Notepad++.Notepad++"
 winget install --force --id "Mozilla.Firefox"
@@ -25,7 +26,7 @@ winget install --force --id "Google.Chrome"
 winget install --force --id "7zip.7zip"
 winget install --force --id "PuTTY.PuTTY"
 
-# Uninstall Microsoft Shit
+# Uninstall Microsoft Apps
 winget uninstall --id "Microsoft.BingWeather_8wekyb3d8bbwe"
 winget uninstall --id "Microsoft.GamingApp_8wekyb3d8bbwe"
 winget uninstall --id "Microsoft.Getstarted_8wekyb3d8bbwe"
