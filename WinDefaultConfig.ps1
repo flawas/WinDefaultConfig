@@ -52,6 +52,8 @@ winget uninstall --id "O365HomePremRetail - en-en"
 
 # Uninstall HP Tools
 winget uninstall --id "{C245BEA3-FEDF-4593-A9B0-3DE9C82C09F4}"
+winget uninstall --id "{6F14D6F0-7663-11ED-9748-10604B96B11C}"
+winget uninstall --id "{5000F75C-32F5-428D-9690-8A522F0C5B76}"
 winget uninstall --id "AD2F1837.HPPrivacySettings_v10z8vjag6ke6"
 winget uninstall --id "AD2F1837.HPEasyClean_v10z8vjag6ke6"
 winget uninstall --id "AD2F1837.HPDesktopSupportUtilities_v10z8vjag6ke6"
