@@ -26,6 +26,9 @@ winget install --force --id "Google.Chrome"
 winget install --force --id "7zip.7zip"
 winget install --force --id "PuTTY.PuTTY"
 
+# Install Netextender
+winget install --force --id "SonicWALL.NetExtender"
+
 # Uninstall Microsoft Apps
 winget uninstall --id "Microsoft.BingWeather_8wekyb3d8bbwe"
 winget uninstall --id "Microsoft.GamingApp_8wekyb3d8bbwe"
@@ -210,3 +213,6 @@ Disable-NetAdapterBinding -InterfaceAlias "*" -ComponentID "ms_tcpip6"
 $null = w32tm /config /manualpeerlist:"ch.pool.ntp.org,0x8" /syncfromflags:manual /reliable:yes /update
 $null = net stop w32time
 $null = net start w32time
+
+# Set default language
+Set-WinUserLanguageList de-CH -Force
